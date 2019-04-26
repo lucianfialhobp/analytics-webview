@@ -66,10 +66,51 @@ function setUserProperty(name, value) {
 }
 // [END set_user_property]
 
-document.getElementById("event1").addEventListener("click", function() {
-    console.log("event1");
-    logEvent("event1", { foo: "bar", baz: 123 });
+// View list events
+document.getElementById("view_item").addEventListener("click", function() {
+  console.log("view_item");
+  logEvent("view_item", {item_category: "Camisa", item_name: "Polo Piquet", item_id: "1234", price: 139.9, currency: "BRL" });
 });
+
+document.getElementById("view_item_list").addEventListener("click", function() {
+  console.log("view_item_list");
+  logEvent("view_item_list", {item_category: "Camisa"});
+});
+
+
+document.getElementById("view_search_results").addEventListener("click", function() {
+  console.log("view_search_results");
+  logEvent("view_search_results", { search_term: "Masculino" });
+});
+
+
+
+// Funnel events
+document.getElementById("add_to_cart_goods").addEventListener("click", function() {
+    console.log("add_to_cart_goods");
+    logEvent("add_to_cart_goods", { quantity: 1, item_category: "Camisa", item_name: "Polo Piquet", item_id: "1234", price: 139.9, currency: "BRL" });
+});
+
+document.getElementById("begin_checkout_goods").addEventListener("click", function() {
+  console.log("begin_checkout_goods");
+  logEvent("begin_checkout_goods", { coupon: "bar", currency: "BRL"});
+});
+
+document.getElementById("choose_shipping_method_goods").addEventListener("click", function() {
+  console.log("choose_shipping_method_goods");
+  logEvent("choose_shipping_method_goods", { shipping_method: "Delivery" });
+});
+
+document.getElementById("add_payment_info_goods").addEventListener("click", function() {
+  console.log("add_payment_info_goods");
+  logEvent("add_payment_info_goods", { payment_method: "MasterCard" });
+});
+
+document.getElementById("purchase_gd").addEventListener("click", function() {
+  console.log("ecommerce_purchase_goods");
+  logEvent("ecommerce_purchase_goods", { coupon: "TESTE", currency: "BRL", value: 146.9, tax: 1, shipping: 6.9, transaction_id: "T-1234-" + Math.random()});
+});
+
 
 document.getElementById("event2").addEventListener("click", function() {
   console.log("event2");
